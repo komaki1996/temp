@@ -1,0 +1,38 @@
+{
+  module: "MMM-YouTube",
+  position: "top_right",
+  config: {
+    verbose:true,
+    defaultQuality: "default",
+    width: "800px",
+    height: "600px",
+    volume: 100,
+    disableCC: true,
+    showPlayingOnly: true,
+    defaultLoop: false,
+    defaultShuffle: false,
+    defaultAutoplay: true,
+    onStartPlay: null,
+    playerVars: {
+      controls: 0,
+      hl: "en",
+      enablejsapi: 1,
+      showinfo: 0,
+      rel: 0,
+      cc_load_policy: 0,
+    },
+    telegramBotCommand: {
+      YOUTUBE_LOAD_BY_URL: "yt",
+      YOUTUBE_LOAD_PLAYLIST: "yl",
+      YOUTUBE_CONTROL: "yc"
+    },
+    outNotifications: {
+      "-1": "UNSTARTED",
+      "0": "ENDED",
+      "1": "PLAYING",
+      "2": "PAUSED",
+      "3": "BUFFERING",
+      "5": "VIDEO CUED",
+    }
+  }
+},
