@@ -1,0 +1,15 @@
+[Unit]
+Description=Growi
+After=network.target mongodb.service elasticsearch.service
+
+[Service]
+WorkingDirectory=/opt/growi
+Environment=PORT=3000 \
+            MONGO_URI=mongodb://localhost:27017/growi \
+            ELASTICSEARCH_URI=http://localhost:9200/growi \
+            FILE_UPLOAD=mongodb \
+            MATHJAX=1
+ExecStart=/usr/bin/npm start
+
+[Install]
+WantedBy=multi-user.target
