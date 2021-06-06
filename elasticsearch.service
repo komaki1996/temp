@@ -1,0 +1,17 @@
+[Unit]
+After=syslog.target network.target
+
+[Service]
+Environment="JAVA_HOME=/usr/lib/jvm/java-8-openjdk-armhf"
+ExecStart=/home/{username}/.local/elasticsearch/bin/elasticsearch
+WorkingDirectory=/home/{username}/.local/elasticsearch
+User={username}
+Group={groupname}
+Nice=10
+SyslogIdentifier=Elasticsearch
+StandardOutput=syslog
+Restart=on-failure
+KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target
